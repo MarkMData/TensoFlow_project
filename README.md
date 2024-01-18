@@ -149,5 +149,11 @@ convolutional layers had accuracy against the test data of 0.958 which represent
 
  <br>  
 
-The convolutional networks had the advantage over the multinomial regression network of using the input data in a shape that allowed the spatial relationships between the x, y and z axis to be preserved. They also had multiple layers in which features within the data could be identified and then combined.
+The convolutional networks had the advantage over the multinomial regression network of using the input data in a shape that allowed the spatial relationships between the x, y and z axis to be preserved. They also had multiple layers in which features within the data could be identified and then combined.  
+<br>  
+### References  
+Kingma, D. P., & Lei Ba, J. (2015). Adam: A method for stochastic optimization. ICLR, (p. 1:15).  
+
+Reyes-Ortiz, J., Anguita, D., Ghio, A., Oneto, L., & Parra, X. (2012). Human Activity Recognition Using Smartphones. Retrieved from UCI Machine Learning Repository: ttps://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones
+
 
