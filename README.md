@@ -117,6 +117,16 @@ observations) sets.
     1. The model 1 configuration that had produced the best validation accuracy (single convolutional layer with kernel size 4 and 64 filters).
     2. The model 2 configuration that had included three convolutional layers.
 - For both configurations the learning rate was kept at 0.0001, the batch size at 64 and the number of epochs 2000.
+<br>
+***Table 3. Training and validation accuracy and loss for the two configurations of model 3.***
 
+|                            |     Single convolutional layer    |     Three convolutional layers    |
+|----------------------------|-----------------------------------|-----------------------------------|
+|     Training loss          |     0.046                         |     0.032                         |
+|     Validation loss        |     0.057                         |     0.039                         |
+|     Training accuracy      |     0.985                         |     0.994                         |
+|     Validation accuracy    |     0.982                         |     0.991                         |
+<br>
 Both configurations had excellent validation accuracy (see Table 3) with the single convolutional layer network achieving 0.982, and the network with three convolutional layers achieving 0.991. Looking at the plots of loss and accuracy during training (see Figure 5) both configurations of network 3 exhibited good stability during training.
-
+<br>
+![Figure 4.](https://github.com/MarkMData/TensoFlow_project/blob/main/Tf_proj_image4.png)  
