@@ -21,6 +21,7 @@ The first neural network approach consisted of a single layer implementing a mul
 - I used an Adam optimizer to minimize the loss function as it can deal with noisy gradients, has an adaptive learning rate and has been shown to consistently perform well compared to other optimizers (Kingma & Lei Ba, 2015).
 - After some experimentation with different learning rates, a value of 0.001 was chosen as a balance between time to convergence and accuracy & stability and at this value running for 20,000 epochs was sufficient for the loss, training accuracy and validation accuracy to stabilize without over fitting (see Figure 1).
 <br>
+
 ![Figure 1.](https://github.com/MarkMData/TensoFlow_project/blob/main/Tf_proj_image1.png)  
 ***Figure 1. Training loss, training accuracy, and validation accuracy for Model 1.***  
 <br>
@@ -42,14 +43,17 @@ This was implemented in the following way:
 - The loss and accuracy for both the training and validation data at the three different batch sizes were monitored using Tensorboard (see Figure 2) 
 - The validation accuracy was recorded after each epoch, and the parameters associated with the greatest accuracy saved. (the highest validation accuracy, along with loss and
 training accuracy, for each batch size are displayed in Table 1).
+<br>
 
-![Figure 1.](https://github.com/MarkMData/TensoFlow_project/blob/main/Tf_proj_image2.png)  
+![Figure 2.](https://github.com/MarkMData/TensoFlow_project/blob/main/Tf_proj_image2.png)  
 ***Figure 2. Accuracy and loss for model 2 with three different batch sizes. Training data is blue and validation data is red.***  
+<br>  
 
 For all three batch sizes the highest validation accuracy was above 0.85, indicating quite good predictive performance, and was slightly higher than the training accuracy indicating no issues with overfitting. The stability of the training and validation accuracy and loss improved as batch size increased, but time to convergence was slower. The best overall accuracy on the validation set of 0.871 was achieved using the medium batch size of 64.
+<br>  
 
     
-**Table 1. Accuracy and loss for model 2 with different batch sizes**
+***Table 1. Accuracy and loss for model 2 with different batch sizes***
 |                     | Batch size = 32 | Batch size = 64 | Batch size 128 |
 |---------------------|-----------------|-----------------|----------------|
 | Training loss       |     0.425       |     0.439       |     0.463      |
@@ -57,8 +61,7 @@ For all three batch sizes the highest validation accuracy was above 0.85, indica
 | Training accuracy   |     0.854       |     0.857       |     0.847      |
 | Validation accuracy |     0.867       |     0.871       |     0.861      |  
 
-  
-
+<br>
 
 With the learning rate set at 0.0001, the batch size set to 64 and running for 2000 epochs several model parameter configurations were then trialed with the aim of finding the combination that produced the best validation accuracy. Initially, three different kernel sizes (3, 4, 5) and three different options for the number of filters (16, 32, 64) were used with a single convolutional layer. As the number of filters or size of kernel increased, the time to convergence became longer and while some marginally greater improvement in accuracy may have been achieved with running for greater than 2000 epochs this was not practical given the time and resources available. A kernel size of three had worse validation accuracy than the other two sizes at all numbers of filters, and kernel size five was better than four when used with 16 and 32 filters but worse at 64 filters. Validation accuracy improved with the number of filters for all kernel sizes.  
 
@@ -86,7 +89,7 @@ While keeping the learning rate, batch size and number of epochs the same, two m
 
 The accuracy values for all iterations of model 2 are displayed in Table 2. Compared to the best performing model with a single convolutional layer, the two models with multiple convolutional layers had lower validation accuracy and suffered from greater instability during training, as illustrated in Figure 4.  
 <br>
-**Table 2. Accuracy of model 2 with different parameter configurations**
+***Table 2. Accuracy of model 2 with different parameter configurations***
 |     Model variations                                                                                                               |     Training accuracy    |     Validation accuracy    |
 |------------------------------------------------------------------------------------------------------------------------------------|--------------------------|----------------------------|
 |     1 convolutional layer, kernel size = 3, filters = 16                                                                           |     0.824                |     0.838                  |
@@ -103,6 +106,6 @@ The accuracy values for all iterations of model 2 are displayed in Table 2. Comp
 <br>
 <br>
   
-![Figure 1.](https://github.com/MarkMData/TensoFlow_project/blob/main/Tf_proj_image3.png)  
-
+![Figure 3.](https://github.com/MarkMData/TensoFlow_project/blob/main/Tf_proj_image3.png)  
+***Training and validation accuracy for the best performing model with a single convolutional layer (left) versus the network with two convolutional layers (right). Training data is blue and validation data is red***
 
