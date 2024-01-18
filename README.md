@@ -19,4 +19,4 @@ The first neural network consisted of a single layer implementing a multinomial 
 - I used an Adam optimizer to minimize the loss function as it can deal with noisy gradients, has an adaptive learning rate and has been shown to consistently perform well compared to other optimizers (Kingma & Lei Ba, 2015).
 - After some experimentation with different learning rates, a value of 0.001 was chosen as a balance between time to convergence and accuracy & stability and at this value running for 20,000 epochs was sufficient for the loss, training accuracy and validation accuracy to stabilize without over fitting (see Figure 1).
 
-[Figure 1.](
+[Figure 1.](https://github.com/MarkMData/TensoFlow_project/blob/main/Tf_proj_image1.png)
