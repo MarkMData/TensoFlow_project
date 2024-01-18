@@ -8,8 +8,6 @@ Oneto, & Parra (2012).
 The data set contains of readings from the accelerometer and gyroscope contained within a smartphone that was worn by 30 volunteers as they were performing six activities (walking, walking upstairs, walking downstairs, sitting, standing and laying). All the data had been collected at 50Hz and consists of triaxial linear acceleration data (that was separated into body acceleration and gravity components) and triaxial angular velocity data. There were 10299 total samples of 128 readings, each representing 2.56 seconds of activity and these had been randomly split into a training set with 7352 observations (70%) and a testing set with 2947 observations (30%). I split the training set again into training (80%) and validataion (20%) sets for use during model development.
   
 The goal of the analysis was to evaluate the accuracy of three different neural network models (of increasing complexity) for predicting the activity class from the acceleration and velocity time segments using Python, TensorFlow, and Keras to develop the models, Tensorboard to visualise the progression of training over time.  
-### Project requirements
-1
 
 ## Model 1.  
 
@@ -125,8 +123,31 @@ observations) sets.
 |     Training loss          |     0.046                         |     0.032                         |
 |     Validation loss        |     0.057                         |     0.039                         |
 |     Training accuracy      |     0.985                         |     0.994                         |
-|     Validation accuracy    |     0.982                         |     0.991                         |
+|     Validation accuracy    |     0.982                         |     0.991                         |  
+
 <br>
-Both configurations had excellent validation accuracy (see Table 3) with the single convolutional layer network achieving 0.982, and the network with three convolutional layers achieving 0.991. Looking at the plots of loss and accuracy during training (see Figure 5) both configurations of network 3 exhibited good stability during training.
+Both configurations had excellent validation accuracy (see Table 3) with the single convolutional layer network achieving 0.982, and the network with three convolutional layers achieving 0.991. Looking at the plots of loss and accuracy during training (see Figure 4) both configurations of network 3 exhibited good stability during training.  
 <br>
+<br>  
+
 ![Figure 4.](https://github.com/MarkMData/TensoFlow_project/blob/main/Tf_proj_image4.png)  
+***Figure 4. Accuracy and loss for model 3. The single convolutional layer configuration is on the right and the three convolutional layer configuration is on the left. Training data is blue and validation data is red.***  
+<br>  
+## Performance of models on test data.  
+Finally, the best performing configurations for network 1, network 2 and network 3 were evaluated against the test data (see Table 4 for results). The test accuracy for model 1 was 0.307 which is slightly better than the model achieved on the validation data but still poor classification performance. The best performing configuration for model 2 (single convolutional layer with kernel size 4 and 64 filters) had accuracy on the test data of 0.843 which is quite good performance and only slightly less than what was achieved on the validation data. The configuration of model 3 with three
+convolutional layers had accuracy against the test data of 0.958 which represents excellent performance and only slightly lower than the validation data.  
+
+<br>  
+
+***Table 4. Accuracy of all three models on testing data***  
+
+|         | Test accuracy |
+|---------|---------------|
+| Model 1 | 0.307         |
+| Model 2 | 0.843         |
+| Model 3 | 0.958         | 
+
+ <br>  
+
+The convolutional networks had the advantage over the multinomial regression network of using the input data in a shape that allowed the spatial relationships between the x, y and z axis to be preserved. They also had multiple layers in which features within the data could be identified and then combined.
+
