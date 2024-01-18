@@ -107,5 +107,16 @@ The accuracy values for all iterations of model 2 are displayed in Table 2. Comp
 <br>
   
 ![Figure 3.](https://github.com/MarkMData/TensoFlow_project/blob/main/Tf_proj_image3.png)  
-***Training and validation accuracy for the best performing model with a single convolutional layer (left) versus the network with two convolutional layers (right). Training data is blue and validation data is red***
+***Figure 3. Training and validation accuracy for the best performing model with a single convolutional layer (left) versus the network with two convolutional layers (right). Training data is blue and validation data is red***
+<br>
+## Model 3.
+The final network approach (network 3) involved using all nine input variables, which were the x, y, z components for each of the body acceleration, gravity and angular velocity data.
+- The nine inputs were combined into an array of shape (128, 9) and then the training set was split into training (80% of observations) and validation (20% of
+observations) sets.
+- This data was then used with two network configurations:
+    1. The model 1 configuration that had produced the best validation accuracy (single convolutional layer with kernel size 4 and 64 filters).
+    2. The model 2 configuration that had included three convolutional layers.
+- For both configurations the learning rate was kept at 0.0001, the batch size at 64 and the number of epochs 2000.
+
+Both configurations had excellent validation accuracy (see Table 3) with the single convolutional layer network achieving 0.982, and the network with three convolutional layers achieving 0.991. Looking at the plots of loss and accuracy during training (see Figure 5) both configurations of network 3 exhibited good stability during training.
 
